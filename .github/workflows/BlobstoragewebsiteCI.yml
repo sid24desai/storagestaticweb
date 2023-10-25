@@ -1,17 +1,16 @@
 name: Blob storage website CI
+on: [push]
 
-on:
-    push:
-        branches: [ main ]
 
 jobs:
-  build:
+
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    
     - uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Upload to blob storage
       uses: azure/CLI@v1

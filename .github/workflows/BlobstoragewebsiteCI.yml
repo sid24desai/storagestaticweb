@@ -25,4 +25,4 @@ jobs:
               --scale-rule-name my-http-rule \
               --scale-rule-type http \
               --scale-rule-http-concurrency 15 \
-              --set-env-vars "BD_PASSWORD=v=K1i2 WS_PROJECT_AR_DSO=example.com AUTO_BATCH_SUBMIT_CRON_START_TIME=*/2 * * * * EMAIL_WHITELIST=[\"a.com\",\"b.net\"]"
+              --set-env-vars "BD_PASSWORD=v=K1i2 WS_PROJECT_AR_DSO=example.com" "AUTO_BATCH_SUBMIT_CRON_START_TIME=*/2 * * * *" "EMAIL_WHITELIST=[\"a.com\",\"b.net\"]"

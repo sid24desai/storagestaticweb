@@ -14,7 +14,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-             az containerapp update \ 
+         az containerapp update \ 
              --name valleycontainerapp95 \ 
              --resource-group siliconrg98 \ 
              --image k8se/quickstart \ 

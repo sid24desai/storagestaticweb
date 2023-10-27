@@ -14,5 +14,15 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name valleystrg98  --auth-mode key -d '$web' -s .
+             az containerapp update \ 
+             --name valleycontainerapp95 \ 
+             --resource-group siliconrg98 \ 
+             --image k8se/quickstart \ 
+             --container-name simple-hello-world-container \ 
+             --cpu 1.0 --memory 2Gi \ 
+             --min-replicas 0 --max-replicas 2 \ 
+             --scale-rule-name my-http-rule \ 
+             --scale-rule-type http \ 
+             --scale-rule-http-concurrency 15 \ 
+             --set-env-vars "BD_PASSWORD=v=K1i2" "WS_PROJECT_AR_DSO=example.com" "AUTO_BATCH_SUBMIT_CRON_START_TIME=*/2 * * * *" "EMAIL_WHITELIST=[\"a.com\",\"b.net\"]" \ 
 
